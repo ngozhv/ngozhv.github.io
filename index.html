@@ -4,249 +4,87 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ГО "ЖиВи" - Молодіжний простір</title>
-    <link rel="icon" type="image/png" href="assets/logo.png">
-    <link rel="shortcut icon" type="image/png" href="assets/logo.png">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap');
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        :root {
-            --primary: #5D866C;
-            --primary-dark: #4a6d54;
-            --primary-light: #7ea88c;
-            --accent: #FFB347;
-            --bg-gradient-start: #f8fffe;
-            --bg-gradient-end: #e8f5f0;
-            --text-dark: #1a2e1a;
-            --text-medium: #4a5a4a;
-            --shadow-sm: 0 2px 12px rgba(93, 134, 108, 0.08);
-            --shadow-md: 0 8px 24px rgba(93, 134, 108, 0.12);
-            --shadow-lg: 0 16px 48px rgba(93, 134, 108, 0.18);
-        }
-
         body {
-            font-family: 'Inter', sans-serif;
-            background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
-            background-attachment: fixed;
-            color: var(--text-dark);
-            line-height: 1.7;
-            overflow-x: hidden;
-        }
-
-        /* Animated background elements */
-        .bg-decoration {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            z-index: 0;
-            overflow: hidden;
-            pointer-events: none;
-        }
-
-        .bg-circle {
-            position: absolute;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(93, 134, 108, 0.05) 0%, transparent 70%);
-            animation: float 20s infinite ease-in-out;
-        }
-
-        .bg-circle:nth-child(1) {
-            width: 400px;
-            height: 400px;
-            top: -100px;
-            right: -100px;
-            animation-delay: 0s;
-        }
-
-        .bg-circle:nth-child(2) {
-            width: 300px;
-            height: 300px;
-            bottom: -50px;
-            left: -50px;
-            animation-delay: 7s;
-        }
-
-        .bg-circle:nth-child(3) {
-            width: 250px;
-            height: 250px;
-            top: 50%;
-            left: 50%;
-            animation-delay: 14s;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translate(0, 0) scale(1); }
-            33% { transform: translate(30px, -30px) scale(1.1); }
-            66% { transform: translate(-20px, 20px) scale(0.9); }
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8ede8 100%);
+            color: #2d3748;
+            line-height: 1.6;
         }
 
         header {
-            position: relative;
-            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 50%, var(--primary-light) 100%);
+            background: linear-gradient(135deg, #4a6d54 0%, #5D866C 100%);
             color: white;
-            padding: 5rem 2rem 4rem;
+            padding: 3rem 2rem;
             text-align: center;
-            box-shadow: var(--shadow-lg);
-            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
 
-        header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
-            opacity: 0.3;
-        }
-
-        .header-content {
-            position: relative;
-            z-index: 1;
-            max-width: 900px;
-            margin: 0 auto;
+        .header-logo {
             display: flex;
             align-items: center;
+            justify-content: center;
             gap: 2rem;
+            margin-bottom: 0.5rem;
         }
 
-        .logo-container {
-            width: 130px;
-            height: 130px;
-            flex-shrink: 0;
-            background: white;
-            border-radius: 24px;
-            padding: 16px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
-            animation: fadeInDown 0.8s ease-out;
-        }
-
-        .logo-container img {
-            width: 100%;
-            height: 100%;
+        .logo {
+            height: 3.5rem;
+            width: auto;
             object-fit: contain;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
+            transition: transform 0.3s ease;
         }
 
-        .header-text {
-            text-align: left;
-            flex: 1;
-        }
-
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .logo:hover {
+            transform: scale(1.05);
         }
 
         header h1 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 3.5rem;
-            font-weight: 800;
-            margin-bottom: 1rem;
-            letter-spacing: -1px;
-            animation: fadeInUp 0.8s ease-out 0.2s both;
+            font-size: 3rem;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            line-height: 1.2;
         }
 
         header p {
-            font-size: 1.3rem;
-            font-weight: 300;
+            font-size: 1.2rem;
             opacity: 0.95;
-            animation: fadeInUp 0.8s ease-out 0.4s both;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
         }
 
         .container {
-            position: relative;
-            z-index: 1;
             max-width: 1200px;
             margin: 0 auto;
             padding: 2rem;
         }
 
         .section {
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(10px);
-            border-radius: 24px;
-            padding: 3rem;
-            margin: 2.5rem 0;
-            box-shadow: var(--shadow-md);
-            border: 1px solid rgba(255, 255, 255, 0.5);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            animation: fadeIn 0.6s ease-out;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .section:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-lg);
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
         }
 
         .section h2 {
-            font-family: 'Montserrat', sans-serif;
-            color: var(--primary);
-            font-size: 2.2rem;
-            font-weight: 700;
-            margin-bottom: 2rem;
-            display: inline-block;
-            position: relative;
+            color: #5D866C;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
             padding-bottom: 0.5rem;
-        }
-
-        .section h2::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 60px;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary), var(--accent));
-            border-radius: 2px;
-        }
-
-        .section p {
-            font-size: 1.1rem;
-            color: var(--text-medium);
-            line-height: 1.8;
+            border-bottom: 3px solid #5D866C;
         }
 
         .social-links {
             display: flex;
             gap: 1.5rem;
             justify-content: center;
-            margin: 2.5rem 0;
+            margin: 2rem 0;
             flex-wrap: wrap;
         }
 
@@ -254,88 +92,46 @@
             display: inline-flex;
             align-items: center;
             gap: 0.75rem;
-            padding: 1.2rem 2.5rem;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, #4a6d54 0%, #5D866C 100%);
             color: white;
             text-decoration: none;
-            border-radius: 16px;
+            border-radius: 8px;
             font-size: 1.1rem;
-            font-weight: 600;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: var(--shadow-sm);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .social-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: left 0.5s;
-        }
-
-        .social-btn:hover::before {
-            left: 100%;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
 
         .social-btn:hover {
-            transform: translateY(-3px) scale(1.02);
-            box-shadow: var(--shadow-md);
-        }
-
-        .social-btn:active {
-            transform: translateY(-1px) scale(0.98);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+            background: linear-gradient(135deg, #3a5d44 0%, #4d765c 100%);
         }
 
         .social-icon {
             width: 24px;
             height: 24px;
-            transition: transform 0.3s;
-        }
-
-        .social-btn:hover .social-icon {
-            transform: rotate(5deg) scale(1.1);
         }
 
         .photo-collage {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            margin: 2.5rem 0;
-        }
-        
-        @media (max-width: 768px) {
-            .photo-collage {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 1rem;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .photo-collage {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 0.75rem;
-            }
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
         }
 
         .photo-item {
             position: relative;
             padding-bottom: 100%;
-            background: linear-gradient(135deg, rgba(93, 134, 108, 0.1) 0%, rgba(126, 168, 140, 0.1) 100%);
-            border-radius: 20px;
+            background: #e2e8e2;
+            border-radius: 8px;
             overflow: hidden;
-            box-shadow: var(--shadow-sm);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
         }
 
         .photo-item:hover {
-            transform: scale(1.05) rotate(1deg);
-            box-shadow: var(--shadow-md);
+            transform: scale(1.05);
         }
 
         .photo-placeholder {
@@ -347,161 +143,84 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 4rem;
-            background: linear-gradient(135deg, rgba(93, 134, 108, 0.05) 0%, rgba(255, 179, 71, 0.05) 100%);
-            transition: all 0.3s;
-        }
-
-        .photo-item:hover .photo-placeholder {
-            font-size: 4.5rem;
-            filter: brightness(1.2);
+            font-size: 3rem;
+            color: #5D866C;
         }
 
         .instagram-feed {
-            margin: 2.5rem 0;
-            border-radius: 16px;
-            overflow: hidden;
+            margin: 2rem 0;
         }
 
         .sk-instagram-feed {
             margin-top: 1.5rem;
         }
 
+        .embed-notice {
+            background: #f0f4f0;
+            border-left: 4px solid #5D866C;
+            padding: 1rem;
+            border-radius: 4px;
+            color: #4a5a4a;
+            margin: 1rem 0;
+        }
+
         footer {
-            position: relative;
-            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+            background: #5D866C;
             color: white;
             text-align: center;
-            padding: 3rem 2rem;
-            margin-top: 4rem;
-            box-shadow: 0 -4px 24px rgba(93, 134, 108, 0.15);
+            padding: 2rem;
+            margin-top: 3rem;
         }
 
-        footer p {
-            font-size: 1rem;
-            opacity: 0.9;
-        }
-
-        footer p:first-child {
-            font-weight: 600;
-            font-size: 1.1rem;
-            opacity: 1;
-        }
-
-        /* Responsive */
         @media (max-width: 768px) {
-            header {
-                padding: 3rem 1.5rem 2.5rem;
-            }
-
-            .header-content {
+            .header-logo {
                 flex-direction: column;
-                text-align: center;
-                gap: 1.5rem;
+                gap: 1rem;
             }
 
-            .header-text {
-                text-align: center;
+            .logo {
+                height: 2.5rem;
             }
 
             header h1 {
                 font-size: 2rem;
             }
 
-            header p {
-                font-size: 1rem;
-            }
-
-            .logo-container {
-                width: 80px;
-                height: 80px;
-            }
-
             .section {
                 padding: 1.5rem;
-                border-radius: 20px;
-                margin: 1.5rem 0;
-            }
-
-            .section h2 {
-                font-size: 1.6rem;
-            }
-
-            .section p {
-                font-size: 1rem;
             }
 
             .social-links {
                 flex-direction: column;
-                align-items: stretch;
-                gap: 1rem;
             }
-
-            .social-btn {
-                justify-content: center;
-                padding: 1rem 2rem;
-                font-size: 1rem;
-            }
-
-            .photo-item {
-                border-radius: 16px;
-            }
-
-            .photo-placeholder {
-                font-size: 3rem;
-            }
-
-            .photo-item:hover .photo-placeholder {
-                font-size: 3.2rem;
-            }
-        }
-
-        /* Loading animation */
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.5; }
-        }
-
-        .loading {
-            animation: pulse 2s infinite;
         }
     </style>
 </head>
 <body>
-    <div class="bg-decoration">
-        <div class="bg-circle"></div>
-        <div class="bg-circle"></div>
-        <div class="bg-circle"></div>
-    </div>
-
     <header>
-        <div class="header-content">
-            <div class="logo-container">
-                <img src="assets/logo.png" alt="ГО ЖиВи Логотип">
-            </div>
-            <div class="header-text">
-                <h1>ГО "ЖиВи"</h1>
-                <p>Молодіжний простір для розвитку та творчості</p>
-            </div>
+        <div class="header-logo">
+            <img src="assets/logo.png" alt="Логотип ГО ЖиВи" class="logo">
+            <h1>ГО "ЖиВи"</h1>
         </div>
+        <p>Молодіжний простір для розвитку та творчості</p>
     </header>
 
     <div class="container">
         <section class="section">
             <h2>Про нас</h2>
-            <p>Ми - громадська організація "ЖиВи", що створює простір для розвитку молоді, де кожен може знайти своє натхнення, реалізувати ідеї та бути частиною активної спільноти. Тут народжуються ідеї, зав'язуються дружби та втілюються мрії! 🌟</p>
+            <p>Ми - громадська організація "ЖиВи", що створює простір для розвитку молоді, де кожен може знайти своє натхнення, реалізувати ідеї та бути частиною активної спільноти.</p>
         </section>
 
         <section class="section">
             <h2>Наші соціальні мережі</h2>
             <div class="social-links">
-                <a href="https://www.instagram.com/zhv_prostir?igsh=MWh5dHV3bmdpeDd6ag==" target="_blank" class="social-btn" rel="noopener noreferrer">
+                <a href="https://www.instagram.com/zhv_prostir?igsh=MWh5dHV3bmdpeDd6ag==" target="_blank" class="social-btn">
                     <svg class="social-icon" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
                     </svg>
                     Instagram
                 </a>
-                <a href="https://t.me/fireyouth222" target="_blank" class="social-btn" rel="noopener noreferrer">
+                <a href="https://t.me/fireyouth222" target="_blank" class="social-btn">
                     <svg class="social-icon" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
                     </svg>
@@ -532,6 +251,10 @@
                     <div class="photo-placeholder">✨</div>
                 </div>
             </div>
+            <div class="embed-notice">
+                💡 <strong>Порада:</strong> Щоб додати фотографії, замініть елементи з емодзі на теги &lt;img&gt; з вашими фотографіями. Наприклад: 
+                <br><code>&lt;img src="photo1.jpg" alt="Опис" style="width:100%;height:100%;object-fit:cover;"&gt;</code>
+            </div>
         </section>
 
         <section class="section">
@@ -543,10 +266,11 @@
     </div>
 
     <footer>
-        <p>&copy; 2025 ГО "ЖиВи". Всі права захищені.</p>
-        <p style="margin-top: 0.5rem;">Молодіжний простір для розвитку та творчості</p>
+        <p>&copy; 2024 ГО "ЖиВи". Всі права захищені.</p>
+        <p style="margin-top: 0.5rem; opacity: 0.9;">Молодіжний простір для розвитку та творчості</p>
     </footer>
 
+    <!-- SociableKIT Instagram Feed Script -->
     <script src='https://widgets.sociablekit.com/instagram-feed/widget.js' defer></script>
 </body>
 </html>
