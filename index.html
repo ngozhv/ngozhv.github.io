@@ -1,69 +1,243 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-  <meta charset="UTF-8">
-  <title>ГО "ЖиВи" — Візитівка</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Громадська організація 'ЖиВи'. Підтримка молоді, екологічні та освітні проєкти.">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ГО "ЖиВи" - Молодіжний простір</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8ede8 100%);
+            color: #2d3748;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #4a6d54 0%, #5D866C 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .section {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .section h2 {
+            color: #5D866C;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid #5D866C;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .social-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, #4a6d54 0%, #5D866C 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .social-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+            background: linear-gradient(135deg, #3a5d44 0%, #4d765c 100%);
+        }
+
+        .social-icon {
+            width: 24px;
+            height: 24px;
+        }
+
+        .photo-collage {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .photo-item {
+            position: relative;
+            padding-bottom: 100%;
+            background: #e2e8e2;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .photo-item:hover {
+            transform: scale(1.05);
+        }
+
+        .photo-placeholder {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: #5D866C;
+        }
+
+        .instagram-feed {
+            margin: 2rem 0;
+        }
+
+        .sk-instagram-feed {
+            margin-top: 1.5rem;
+        }
+
+        .embed-notice {
+            background: #f0f4f0;
+            border-left: 4px solid #5D866C;
+            padding: 1rem;
+            border-radius: 4px;
+            color: #4a5a4a;
+            margin: 1rem 0;
+        }
+
+        footer {
+            background: #5D866C;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .section {
+                padding: 1.5rem;
+            }
+
+            .social-links {
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>ГО "ЖиВи"</h1>
-    <p class="subtitle">Життя. Відповідальність. Розвиток.</p>
-  </header>
-  
-  <section class="collage-section">
-    <h2>Наші заходи</h2>
-    <div class="collage">
-      <!-- Замініть src на свої фото -->
-      <img src="photos/photo1.jpg" alt="Захід 1">
-      <img src="photos/photo2.jpg" alt="Захід 2">
-      <img src="photos/photo3.jpg" alt="Захід 3">
-      <img src="photos/photo4.jpg" alt="Захід 4">
-      <img src="photos/photo5.jpg" alt="Захід 5">
+    <header>
+        <h1>ГО "ЖиВи"</h1>
+        <p>Молодіжний простір для розвитку та творчості</p>
+    </header>
+
+    <div class="container">
+        <section class="section">
+            <h2>Про нас</h2>
+            <p>Ми - громадська організація "ЖиВи", що створює простір для розвитку молоді, де кожен може знайти своє натхнення, реалізувати ідеї та бути частиною активної спільноти.</p>
+        </section>
+
+        <section class="section">
+            <h2>Наші соціальні мережі</h2>
+            <div class="social-links">
+                <a href="https://www.instagram.com/zhv_prostir?igsh=MWh5dHV3bmdpeDd6ag==" target="_blank" class="social-btn">
+                    <svg class="social-icon" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
+                    Instagram
+                </a>
+                <a href="https://t.me/fireyouth222" target="_blank" class="social-btn">
+                    <svg class="social-icon" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+                    </svg>
+                    Telegram
+                </a>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Наші заходи</h2>
+            <div class="photo-collage">
+                <div class="photo-item">
+                    <div class="photo-placeholder">📸</div>
+                </div>
+                <div class="photo-item">
+                    <div class="photo-placeholder">🎨</div>
+                </div>
+                <div class="photo-item">
+                    <div class="photo-placeholder">🌱</div>
+                </div>
+                <div class="photo-item">
+                    <div class="photo-placeholder">🤝</div>
+                </div>
+                <div class="photo-item">
+                    <div class="photo-placeholder">💚</div>
+                </div>
+                <div class="photo-item">
+                    <div class="photo-placeholder">✨</div>
+                </div>
+            </div>
+            <div class="embed-notice">
+                💡 <strong>Порада:</strong> Щоб додати фотографії, замініть елементи з емодзі на теги &lt;img&gt; з вашими фотографіями. Наприклад: 
+                <br><code>&lt;img src="photo1.jpg" alt="Опис" style="width:100%;height:100%;object-fit:cover;"&gt;</code>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Стрічка Instagram</h2>
+            <div class="instagram-feed">
+                <div class='sk-instagram-feed' data-embed-id='25614958'></div>
+            </div>
+        </section>
     </div>
-  </section>
-  
-  <section class="socials">
-    <h2>Ми у соцмережах</h2>
-    <a href="https://www.instagram.com/zhv_prostir?igsh=MWh5dHV3bmdpeDd6ag==" target="_blank" class="social-btn instagram" aria-label="Instagram">
-      <img src="assets/instagram.svg" alt="Instagram">
-    </a>
-    <a href="https://t.me/fireyouth222" target="_blank" class="social-btn telegram" aria-label="Telegram">
-      <img src="assets/telegram.svg" alt="Telegram">
-    </a>
-  </section>
-  
-  <section class="instagram-feed-section">
-    <h2>Останні пости з Instagram</h2>
-    <!-- SnapWidget безкоштовний віджет: https://snapwidget.com/ -->
-    <iframe src="https://snapwidget.com/embed/1111111" 
-            class="instagram-widget" 
-            allowtransparency="true" 
-            frameborder="0" 
-            scrolling="no" 
-            style="border:none; overflow:hidden; width:100%; height:400px;">
-    </iframe>
-    <p class="insta-note">* Віджет оновлюється автоматично</p>
-  </section>
-  
-  <!-- Опційно: контактна форма -->
-  <!--
-  <section class="contact-section">
-    <h2>Зв'язатися з нами</h2>
-    <form>
-      <input type="email" placeholder="Ваш Email" required>
-      <textarea placeholder="Ваше повідомлення" required></textarea>
-      <button type="submit">Надіслати</button>
-    </form>
-  </section>
-  -->
-  
-  <footer>
-    <p>&copy; 2025 ГО "ЖиВи". Всі права захищені.</p>
-  </footer>
+
+    <footer>
+        <p>&copy; 2024 ГО "ЖиВи". Всі права захищені.</p>
+        <p style="margin-top: 0.5rem; opacity: 0.9;">Молодіжний простір для розвитку та творчості</p>
+    </footer>
+
+    <!-- SociableKIT Instagram Feed Script -->
+    <script src='https://widgets.sociablekit.com/instagram-feed/widget.js' defer></script>
 </body>
 </html>
