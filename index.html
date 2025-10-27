@@ -26,6 +26,22 @@
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
 
+        .header-logo {
+            margin-bottom: 1.5rem;
+        }
+
+        .logo {
+            width: 120px;
+            height: 120px;
+            object-fit: contain;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
         header h1 {
             font-size: 3rem;
             margin-bottom: 0.5rem;
@@ -152,6 +168,11 @@
         }
 
         @media (max-width: 768px) {
+            .logo {
+                width: 80px;
+                height: 80px;
+            }
+
             header h1 {
                 font-size: 2rem;
             }
@@ -168,6 +189,9 @@
 </head>
 <body>
     <header>
+        <div class="header-logo">
+            <img src="assets/logo.png" alt="Логотип ГО ЖиВи" class="logo">
+        </div>
         <h1>ГО "ЖиВи"</h1>
         <p>Молодіжний простір для розвитку та творчості</p>
     </header>
@@ -218,10 +242,10 @@
                     <div class="photo-placeholder">✨</div>
                 </div>
             </div>
-            <!--<div class="embed-notice">
+            <div class="embed-notice">
                 💡 <strong>Порада:</strong> Щоб додати фотографії, замініть елементи з емодзі на теги &lt;img&gt; з вашими фотографіями. Наприклад: 
                 <br><code>&lt;img src="photo1.jpg" alt="Опис" style="width:100%;height:100%;object-fit:cover;"&gt;</code>
-            </div> -->
+            </div>
         </section>
 
         <section class="section">
@@ -233,7 +257,7 @@
     </div>
 
     <footer>
-        <p>&copy; 2025 ГО "ЖиВи". Всі права захищені.</p>
+        <p>&copy; 2024 ГО "ЖиВи". Всі права захищені.</p>
         <p style="margin-top: 0.5rem; opacity: 0.9;">Молодіжний простір для розвитку та творчості</p>
     </footer>
 
