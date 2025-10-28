@@ -16,17 +16,17 @@
         }
 
         :root {
-            --primary: #5D866C;
-            --primary-dark: #4a6d54;
-            --primary-light: #7ea88c;
+            --primary: #174143;
+            --primary-dark: #0f2d2e;
+            --primary-light: #1f5558;
             --accent: #FFB347;
             --bg-gradient-start: #f8fffe;
-            --bg-gradient-end: #e8f5f0;
+            --bg-gradient-end: #e0f2f1;
             --text-dark: #1a2e1a;
             --text-medium: #4a5a4a;
-            --shadow-sm: 0 2px 12px rgba(93, 134, 108, 0.08);
-            --shadow-md: 0 8px 24px rgba(93, 134, 108, 0.12);
-            --shadow-lg: 0 16px 48px rgba(93, 134, 108, 0.18);
+            --shadow-sm: 0 2px 12px rgba(23, 65, 67, 0.08);
+            --shadow-md: 0 8px 24px rgba(23, 65, 67, 0.12);
+            --shadow-lg: 0 16px 48px rgba(23, 65, 67, 0.18);
         }
 
         body {
@@ -38,7 +38,42 @@
             overflow-x: hidden;
         }
 
-        /* Animated background elements */
+        .language-switcher {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            display: flex;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 0.5rem;
+            border-radius: 50px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .lang-btn {
+            padding: 0.6rem 1.2rem;
+            border: none;
+            background: transparent;
+            color: var(--text-medium);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            border-radius: 50px;
+            transition: all 0.3s;
+        }
+
+        .lang-btn:hover {
+            background: rgba(23, 65, 67, 0.1);
+        }
+
+        .lang-btn.active {
+            background: var(--primary);
+            color: white;
+        }
+
         .bg-decoration {
             position: fixed;
             width: 100%;
@@ -53,7 +88,7 @@
         .bg-circle {
             position: absolute;
             border-radius: 50%;
-            background: radial-gradient(circle, rgba(93, 134, 108, 0.05) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(23, 65, 67, 0.05) 0%, transparent 70%);
             animation: float 20s infinite ease-in-out;
         }
 
@@ -334,7 +369,7 @@
         .photo-item {
             position: relative;
             padding-bottom: 100%;
-            background: linear-gradient(135deg, rgba(93, 134, 108, 0.1) 0%, rgba(126, 168, 140, 0.1) 100%);
+            background: linear-gradient(135deg, rgba(23, 65, 67, 0.1) 0%, rgba(31, 85, 88, 0.1) 100%);
             border-radius: 20px;
             overflow: hidden;
             box-shadow: var(--shadow-sm);
@@ -361,7 +396,6 @@
             transform: scale(1.1);
         }
 
-        /* Modal styles */
         .modal {
             display: none;
             position: fixed;
@@ -460,7 +494,7 @@
             text-align: center;
             padding: 3rem 2rem;
             margin-top: 4rem;
-            box-shadow: 0 -4px 24px rgba(93, 134, 108, 0.15);
+            box-shadow: 0 -4px 24px rgba(23, 65, 67, 0.15);
         }
 
         footer p {
@@ -474,8 +508,18 @@
             opacity: 1;
         }
 
-        /* Responsive */
         @media (max-width: 768px) {
+            .language-switcher {
+                top: 15px;
+                right: 15px;
+                padding: 0.4rem;
+            }
+
+            .lang-btn {
+                padding: 0.5rem 1rem;
+                font-size: 0.85rem;
+            }
+
             header {
                 padding: 3rem 1.5rem 2.5rem;
             }
@@ -553,7 +597,6 @@
             }
         }
 
-        /* Loading animation */
         @keyframes pulse {
             0%, 100% { opacity: 1; }
             50% { opacity: 0.5; }
@@ -565,6 +608,11 @@
     </style>
 </head>
 <body>
+    <div class="language-switcher">
+        <button class="lang-btn active" onclick="switchLanguage('uk')" data-lang="uk">УКР</button>
+        <button class="lang-btn" onclick="switchLanguage('en')" data-lang="en">ENG</button>
+    </div>
+
     <div class="bg-decoration">
         <div class="bg-circle"></div>
         <div class="bg-circle"></div>
@@ -577,20 +625,20 @@
                 <img src="assets/logo.png" alt="ГО ЖиВи Логотип">
             </div>
             <div class="header-text">
-                <h1>ГО "ЖВ"</h1>
-                <p>Молодіжний простір для розвитку та творчості</p>
+                <h1 data-translate="header-title">ГО "ЖВ"</h1>
+                <p data-translate="header-subtitle">Молодіжний простір для розвитку та творчості</p>
             </div>
         </div>
     </header>
 
     <div class="container">
         <section class="section">
-            <h2>Про нас</h2>
-            <p>Ми - громадська організація "ЖВ", що створює простір для розвитку молоді, де кожен може знайти своє натхнення, реалізувати ідеї та бути частиною активної спільноти. Тут народжуються ідеї, зав'язуються дружби та втілюються мрії! 🌟</p>
+            <h2 data-translate="about-title">Про нас</h2>
+            <p data-translate="about-text">Ми - громадська організація "ЖВ", що створює простір для розвитку молоді, де кожен може знайти своє натхнення, реалізувати ідеї та бути частиною активної спільноти. Тут народжуються ідеї, зав'язуються дружби та втілюються мрії! 🌟</p>
         </section>
 
         <section class="section">
-            <h2>Наші соціальні мережі</h2>
+            <h2 data-translate="social-title">Наші соціальні мережі</h2>
             <div class="social-links">
                 <a href="https://www.instagram.com/zhv_prostir?igsh=MWh5dHV3bmdpeDd6ag==" target="_blank" class="social-btn" rel="noopener noreferrer">
                     <svg class="social-icon" fill="currentColor" viewBox="0 0 24 24">
@@ -608,7 +656,7 @@
         </section>
 
         <section class="section">
-            <h2>Наші заходи</h2>
+            <h2 data-translate="events-title">Наші заходи</h2>
             <div class="photo-collage">
                 <div class="photo-item" onclick="openModal(1)">
                     <img src="assets/1.jpg" alt="Фото 1">
@@ -649,7 +697,6 @@
             </div>
         </section>
 
-        <!-- Modal для перегляду фото -->
         <div id="photoModal" class="modal" onclick="closeModal(event)">
             <span class="modal-close" onclick="closeModal()">&times;</span>
             <span class="modal-nav modal-prev" onclick="changePhoto(-1, event)">&#10094;</span>
@@ -658,7 +705,7 @@
         </div>
 
         <section class="section">
-            <h2>Стрічка Instagram</h2>
+            <h2 data-translate="instagram-title">Стрічка Instagram</h2>
             <div class="instagram-feed">
                 <div class='sk-instagram-feed' data-embed-id='25614958'></div>
             </div>
@@ -666,12 +713,63 @@
     </div>
 
     <footer>
-        <p>&copy; 2025 ГО "ЖиВи". Всі права захищені.</p>
-        <p style="margin-top: 0.5rem;">Молодіжний простір для розвитку та творчості</p>
+        <p data-translate="footer-rights">&copy; 2025 ГО "ЖиВи". Всі права захищені.</p>
+        <p style="margin-top: 0.5rem;" data-translate="footer-subtitle">Молодіжний простір для розвитку та творчості</p>
     </footer>
 
     <script src='https://widgets.sociablekit.com/instagram-feed/widget.js' defer></script>
     <script>
+        const translations = {
+            uk: {
+                'header-title': 'ГО "ЖВ"',
+                'header-subtitle': 'Молодіжний простір для розвитку та творчості',
+                'about-title': 'Про нас',
+                'about-text': 'Ми - громадська організація "ЖВ", що створює простір для розвитку молоді, де кожен може знайти своє натхнення, реалізувати ідеї та бути частиною активної спільноти. Тут народжуються ідеї, зав\'язуються дружби та втілюються мрії! 🌟',
+                'social-title': 'Наші соціальні мережі',
+                'events-title': 'Наші заходи',
+                'instagram-title': 'Стрічка Instagram',
+                'footer-rights': '© 2025 ГО "ЖиВи". Всі права захищені.',
+                'footer-subtitle': 'Молодіжний простір для розвитку та творчості'
+            },
+            en: {
+                'header-title': 'NGO "ZhV"',
+                'header-subtitle': 'Youth space for development and creativity',
+                'about-title': 'About Us',
+                'about-text': 'We are the NGO "ZhV", creating a space for youth development where everyone can find inspiration, implement ideas, and be part of an active community. Here ideas are born, friendships are formed, and dreams come true! 🌟',
+                'social-title': 'Our Social Media',
+                'events-title': 'Our Events',
+                'instagram-title': 'Instagram Feed',
+                'footer-rights': '© 2025 NGO "ZhyVy". All rights reserved.',
+                'footer-subtitle': 'Youth space for development and creativity'
+            }
+        };
+
+        let currentLang = 'uk';
+
+        function switchLanguage(lang) {
+            currentLang = lang;
+            
+            // Update active button
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.dataset.lang === lang) {
+                    btn.classList.add('active');
+                }
+            });
+
+            // Update all translatable elements
+            document.querySelectorAll('[data-translate]').forEach(element => {
+                const key = element.getAttribute('data-translate');
+                if (translations[lang] && translations[lang][key]) {
+                    element.textContent = translations[lang][key];
+                }
+            });
+
+            // Save language preference
+            localStorage.setItem('preferredLanguage', lang);
+        }
+
+        // Photo modal functions
         let currentPhotoIndex = 1;
         const totalPhotos = 12;
 
@@ -710,14 +808,28 @@
             modalImg.src = `assets/${currentPhotoIndex}.jpg`;
         }
 
-        // Закриття модального вікна при натисканні ESC
+        // Keyboard controls
         document.addEventListener('keydown', function(event) {
             if (event.key === 'Escape') {
                 closeModal({ target: document.getElementById('photoModal') });
             } else if (event.key === 'ArrowLeft') {
-                changePhoto(-1);
+                const modal = document.getElementById('photoModal');
+                if (modal.classList.contains('active')) {
+                    changePhoto(-1);
+                }
             } else if (event.key === 'ArrowRight') {
-                changePhoto(1);
+                const modal = document.getElementById('photoModal');
+                if (modal.classList.contains('active')) {
+                    changePhoto(1);
+                }
+            }
+        });
+
+        // Load saved language preference on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLang = localStorage.getItem('preferredLanguage');
+            if (savedLang && (savedLang === 'uk' || savedLang === 'en')) {
+                switchLanguage(savedLang);
             }
         });
     </script>
