@@ -42,7 +42,7 @@
             position: fixed;
             top: 20px;
             right: 20px;
-            z-index: 1000;
+            z-index: 100;
             display: flex;
             gap: 0.5rem;
             background: rgba(255, 255, 255, 0.95);
@@ -50,6 +50,13 @@
             padding: 0.5rem;
             border-radius: 50px;
             box-shadow: var(--shadow-md);
+            transition: opacity 0.3s;
+        }
+
+        .modal.active ~ .language-switcher,
+        body:has(.modal.active) .language-switcher {
+            opacity: 0;
+            pointer-events: none;
         }
 
         .lang-btn {
