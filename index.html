@@ -774,14 +774,16 @@
         let currentPhotoIndex = 1;
         const totalPhotos = 12;
 
-        function openModal(photoIndex) {
+         function openModal(photoIndex) {
             currentPhotoIndex = photoIndex;
             const modal = document.getElementById('photoModal');
             const modalImg = document.getElementById('modalImage');
+            const languageSwitcher = document.querySelector('.language-switcher');
             
             modal.classList.add('active');
             modalImg.src = `assets/${photoIndex}.jpg`;
             document.body.style.overflow = 'hidden';
+            languageSwitcher.style.display = 'none';
         }
 
         function closeModal(event) {
