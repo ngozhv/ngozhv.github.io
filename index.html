@@ -16,17 +16,17 @@
         }
 
         :root {
-            --primary: #174143;
-            --primary-dark: #0f2d2e;
-            --primary-light: #1f5558;
+            --primary: #005b44;
+            --primary-dark: #003d2e;
+            --primary-light: #00795a;
             --accent: #FFB347;
             --bg-gradient-start: #f8fffe;
-            --bg-gradient-end: #e0f2f1;
+            --bg-gradient-end: #e0f5f0;
             --text-dark: #1a2e1a;
             --text-medium: #4a5a4a;
-            --shadow-sm: 0 2px 12px rgba(23, 65, 67, 0.08);
-            --shadow-md: 0 8px 24px rgba(23, 65, 67, 0.12);
-            --shadow-lg: 0 16px 48px rgba(23, 65, 67, 0.18);
+            --shadow-sm: 0 2px 12px rgba(0, 91, 68, 0.08);
+            --shadow-md: 0 8px 24px rgba(0, 91, 68, 0.12);
+            --shadow-lg: 0 16px 48px rgba(0, 91, 68, 0.18);
         }
 
         body {
@@ -66,7 +66,7 @@
         }
 
         .lang-btn:hover {
-            background: rgba(23, 65, 67, 0.1);
+            background: rgba(0, 91, 68, 0.1);
         }
 
         .lang-btn.active {
@@ -88,7 +88,7 @@
         .bg-circle {
             position: absolute;
             border-radius: 50%;
-            background: radial-gradient(circle, rgba(23, 65, 67, 0.05) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(0, 91, 68, 0.05) 0%, transparent 70%);
             animation: float 20s infinite ease-in-out;
         }
 
@@ -369,7 +369,7 @@
         .photo-item {
             position: relative;
             padding-bottom: 100%;
-            background: linear-gradient(135deg, rgba(23, 65, 67, 0.1) 0%, rgba(31, 85, 88, 0.1) 100%);
+            background: linear-gradient(135deg, rgba(0, 91, 68, 0.1) 0%, rgba(0, 121, 90, 0.1) 100%);
             border-radius: 20px;
             overflow: hidden;
             box-shadow: var(--shadow-sm);
@@ -494,7 +494,7 @@
             text-align: center;
             padding: 3rem 2rem;
             margin-top: 4rem;
-            box-shadow: 0 -4px 24px rgba(23, 65, 67, 0.15);
+            box-shadow: 0 -4px 24px rgba(0, 91, 68, 0.15);
         }
 
         footer p {
@@ -746,7 +746,7 @@
 
         let currentLang = 'uk';
 
-        function switchLanguage(lang) {
+        function switchLanguage(lang)
             currentLang = lang;
             
             // Update active button
